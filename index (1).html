@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Metas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+    <div class="container">
+        <div class="top-controls">
+            <button id="themeToggle" onclick="toggleTheme()">🌙 Modo Noite</button>
+        </div>
+
+        <header>
+            <h1>Gestor de Metas</h1>
+            <p>🧮<p>
+        </header>
+
+        <section class="config-section">
+            <div class="input-group">
+                <label>Valor Total (Bônus/Meta)</label>
+                <input type="number" id="valorTotal" placeholder="R$ 0,00">
+            </div>
+
+            <div class="input-group">
+                <label>Forma de Cálculo</label>
+                <select id="tipoCalculo">
+                    <option value="proporcional">Regra de 3 (Proporcional)</option>
+                    <option value="igualitario">Divisão Igualitária (Partes Iguais)</option>
+                    <option value="metaFixa">Meta Individual Fixa</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="groupProducaoTotal">
+                <label>Produção Total da Filial</label>
+                <input type="number" id="producaoTotalFilial" placeholder="R$ 0,00">
+            </div>
+        </section>
+
+        <table id="tabelaColaboradores">
+            <thead>
+                <tr>
+                    <th>Colaborador</th>
+                    <th id="thVariavel">Produção (R$)</th>
+                    <th>Resultado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+                </tbody>
+        </table>
+
+        <div class="actions">
+            <button class="btn-secondary" onclick="adicionarLinha()">+ Adicionar Pessoa</button>
+            <button class="btn-primary" onclick="calcular()">Calcular Agora</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
